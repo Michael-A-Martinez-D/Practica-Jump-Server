@@ -1,0 +1,54 @@
+en
+conf t
+hostname ISP
+
+int e0/0
+ description Enlace hacia R1
+ ip address 14.10.1.1 255.255.255.252
+ no shutdown
+
+int e0/1
+ description Enlace hacia FGT
+ ip address 14.10.2.1 255.255.255.252
+ no shutdown
+
+do wr
+
+
+en
+conf t
+hostname R1
+
+ip route 0.0.0.0 0.0.0.0 14.10.1.1
+
+interf e0/0
+
+ip address 14.10.1.2 255.255.255.252
+ip nat outside
+
+no sh
+
+interface range e0/1-2
+
+description VLAN10
+
+ip address 14.10.10.1 255.255.255.128
+ip nat inside
+
+no sh
+
+exit
+
+
+ip dhcp excluded-address 14.10.10.1 
+
+ip dhcp pool VLAN10
+network 14.10.10.0 255.255.255.128
+default-router 14.10.10.1
+exit
+
+ip nat inside source list 1 interface e0/0 overload
+access-list 1 permit 14.10.10.0 0.0.0.127
+
+
+do wr

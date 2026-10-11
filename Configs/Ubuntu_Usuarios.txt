@@ -1,0 +1,26 @@
+/////////////////////Ubuntu: Usuario Basico
+
+sudo nano start.sh
+sudo dhclient eth1
+ip a
+
+sudo apt update
+sudo apt install openfortivpn -y
+
+echo "14.10.30.2 WIN-H0A6C2ADUHI.lab.local" | sudo tee -a /etc/hosts
+
+sudo openfortivpn 14.10.2.2:10443 -u usuario_basico -p Toybot17 --cipher=DEFAULT:@SECLEVEL=1 --trusted-cert=286efc05555bc05560acbbb14928b35b93b7da0e6a47e1a6701bc983704f119
+
+
+/////////////////////Ubuntu: Usuario privilegiado
+
+sudo nano start.sh
+sudo dhclient eth1
+ip a
+
+sudo apt update
+sudo apt install openfortivpn -y
+
+echo "14.10.30.2 WIN-H0A6C2ADUHI.lab.local" | sudo tee -a /etc/hosts
+
+sudo openfortivpn 14.10.2.2:10443 -u usuario_priv -p Toybot17 --cipher=DEFAULT:@SECLEVEL=1 --trusted-cert=286efc05555bc05560acbbb14928b35b93b7da0e6a47e1a6701bc983704f119

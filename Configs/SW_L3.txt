@@ -1,0 +1,41 @@
+en
+conf t
+hostname SW_L3
+
+ip routing
+
+ip route 0.0.0.0 0.0.0.0 14.10.1.1
+
+vlan 10
+exit
+
+interf g0/0
+no switchport
+ip address 14.10.1.2 255.255.255.252
+ip nat outside
+no sh
+
+interface range g0/1-2
+switchport mode access
+switchport access vlan 10
+no sh
+exit
+
+interface Vlan10
+ ip address 14.10.10.1 255.255.255.128
+ no shutdown
+exit
+
+
+ip dhcp excluded-address 14.10.10.1 
+
+ip dhcp pool VLAN10
+network 14.10.10.0 255.255.255.128
+default-router 14.10.10.1
+exit
+
+ip nat inside source list 1 interface g0/0 overload
+access-list 1 permit 14.10.10.0 0.0.0.127
+
+
+do wr
