@@ -1,7 +1,7 @@
 Video: https://youtu.be/8PvFUcSNp9A
 
 
-## Direccionamiento VLSM - Infraestructura 2
+## Direccionamiento VLSM 
 El proposito de esta topologia es demostrar el funcionamiento de un Jump Server, que sirve para no acceder directamente a un dispositivo.
 
 Matricula: 2025-1410
