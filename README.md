@@ -2,7 +2,7 @@ Video: https://youtu.be/8PvFUcSNp9A
 
 
 ## Direccionamiento VLSM 
-El proposito de esta topologia es demostrar el funcionamiento de un Jump Server, que sirve para no acceder directamente a un dispositivo.
+El proposito de esta topologia es demostrar el funcionamiento de un Jump Server. Dar acceso remoto seguro a un Web Server mediante un Jump Server como única puerta de entrada, usando una VPN y publicando solo las aplicaciones que corresponden a cada usuario.
 
 Matricula: 2025-1410
 
