@@ -112,9 +112,4 @@ Red base: `14.10.0.0/16` (últimos 4 dígitos de la matrícula)
 
 ![Detalles Web Server](imagenes2/DetallesWebServer.png)
 
----
 
-## Configuraciones
-
-- [configs.txt](imagenes2/configs.txt)
-- [Running configs.txt](imagenes2/Running%20configs.txt)
