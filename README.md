@@ -31,3 +31,90 @@ Red base: `14.10.0.0/16` (últimos 4 dígitos de la matrícula)
 | Web Server (Sistema de Caja) | eth1 | 14.10.20.2/29 | 14.10.20.1 |
 | Jump Server (Windows Server) | Ethernet | 14.10.30.2/29 | 14.10.30.1 |
 | Usuarios VLAN 10 (DHCP) | - | Pool del switch L3 en 14.10.10.0/25 | 14.10.10.1 |
+
+
+
+## Topología
+
+![Topología](imagenes2/topologia.png)
+
+---
+
+## Configuración en el FortiGate (GUI)
+
+### Interfaces
+
+![Interfaces general](imagenes2/GUI%20Fortigate/InterfacesGeneral.png)
+
+### Rutas estáticas
+
+![Rutas estáticas](imagenes2/GUI%20Fortigate/RutasEstaticas.png)
+
+### Objetos de dirección
+
+![Addresses](imagenes2/GUI%20Fortigate/Addresses.png)
+
+### Usuarios
+
+![Usuarios](imagenes2/GUI%20Fortigate/Usuarios.png)
+
+### SSL-VPN
+
+![SSL-VPN Portals](imagenes2/GUI%20Fortigate/SSL-VPN_Portals.png)
+
+![SSL-VPN Settings](imagenes2/GUI%20Fortigate/SSL-VPN_Settings.png)
+
+### Políticas de firewall
+
+![Políticas de firewall general](imagenes2/GUI%20Fortigate/PoliticasFirewallGeneral.png)
+
+---
+
+## Pruebas
+
+### Conectividad hacia el Web Server
+
+![Prueba de conectividad a puertos del Web Server](imagenes2/PruebaConectividadPuertosWebServer.png)
+
+![Prueba de no conexión al Web Server desde la VPN](imagenes2/PruebaNoConexionWebServerDesdeVPN.png)
+
+### Usuario sin privilegios: SSH restringido
+
+![Básico sin SSH 1](imagenes2/BasicoNoSSH1.png)
+
+![Básico sin SSH 2](imagenes2/BasicoNoSSH2.png)
+
+### RDP RemoteApp y RemoteApp Web Client
+
+![RemoteApp y Web Client - usuario básico](imagenes2/RDP%20RemoteAPPYWebClient_basico.png)
+
+![RemoteApp y Web Client - usuario privilegiado](imagenes2/RDP%20RemoteAPPYWebClient_Priv.png)
+
+### Servicios publicados por usuario
+
+![Servicio Web - usuario básico](imagenes2/DetallesUsuarioBasicoWeb.png)
+
+![Servicios Web, Putty y RDP - usuario privilegiado](imagenes2/DetallesUsuarioPrivWeb.png)
+
+---
+
+## Detalles de los equipos
+
+### PC usuario sin privilegios
+
+![Detalles PC básico](imagenes2/Detalles_PC_basico.png)
+
+### PC usuario con privilegios
+
+![Detalles PC privilegiado](imagenes2/Detalles_PC_priv.png)
+
+### Web Server: Sistema de Caja
+
+![Detalles Web Server](imagenes2/DetallesWebServer.png)
+
+---
+
+## Configuraciones
+
+- [configs.txt](imagenes2/configs.txt)
+- [Running configs.txt](imagenes2/Running%20configs.txt)
